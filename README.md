@@ -39,14 +39,14 @@
 
 ## 🔧 기술 스택
 
-| 분류        | 사용 기술                   |
-|-------------|-----------------------------|
-| Language    | Java 17                     |
-| Framework   | Spring Boot 3.x             |
-| ORM         | Spring Data JPA             |
-| Build Tool  | Gradle (Kotlin DSL)         |
-| DB          | H2 / MySQL                  |
-| 기타        | Lombok, MapStruct 등 사용   |
+| 분류        | 사용 기술             |
+|-------------|-------------------|
+| Language    | Java 17           |
+| Framework   | Spring Boot 3.2.2 |
+| ORM         | Spring Data JDBC  |
+| Build Tool  | Gradle Groovy     |
+| DB          | MySQL             |
+| 기타        | Lombok 사용         |
 
 ---
 
