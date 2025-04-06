@@ -52,16 +52,63 @@
 
 ## 🗃️ ERD
 
-![ERD](./erd.jpg) <!-- image.png는 프로젝트 루트에 저장하세요 -->
+```mermaid
 
+erDiagram
+    Order ||--|{ OrderItem : contains
+    Store ||--o{ StoreProduct : contains
+    
+    Product {
+        int productId
+        String name
+        String description
+        BigDecimal price
+    }
+    
+    Order {
+        int orderId
+        int customerId
+        ZonedDateTime orderedAt
+    }
+    
+    Store {
+        int storeId
+        String name
+        String address
+        String phoneNumber
+        ZonedDateTime openAt
+        ZonedDateTime closeAt
+    }
+    
+    Customer {
+        int customerId
+        String name
+        String phoneNumber
+        String address
+    }
+    
+    OrderItem {
+        int orderItemId
+        int orderId
+        int productId
+        int orderQuantity
+    }
+    
+    StoreProduct {
+        int storeProductId
+        int storeId
+        int productId
+        int stockQuantity
+    }
+```
 ---
 
-## ▶️ 실행 방법
+## Local MySQL
 
-```bash
-# 1. GitHub에서 프로젝트 클론
-git clone https://github.com/husanboy-git/coffee-order.git
-cd coffee-order
+```
+# mysql image 가져오기
+$ docker pull mysql
 
-# 2. 실행 (H2 사용 시)
-./gradlew bootRun
+# docker run
+$ docker run --name localmysql -e MYSQL_ROOT_PASSWORD=coffee -p 3306:3306 -d mysql:latest
+```
